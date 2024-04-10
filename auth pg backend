@@ -10,7 +10,7 @@ const app = express();
 passport.use(new InstagramStrategy({
     clientID: 'YOUR_INSTAGRAM_CLIENT_ID',
     clientSecret: 'YOUR_INSTAGRAM_CLIENT_SECRET',
-    callbackURL: 'http://localhost:3000/auth/instagram/callback' // Update with your callback URL
+    callbackURL: 'http://localhost:3001/auth/instagram/callback' // Update with your callback URL
   },
   function(accessToken, refreshToken, profile, done) {
     // This is where you would typically save the user profile to a database
@@ -53,6 +53,6 @@ app.get('/', function(req, res) {
 });
 
 // Start the server
-app.listen(4000, () => {
-  console.log('Server is running on http://localhost:3000');
+app.listen(3001, () => {
+  console.log('Server is running on http://localhost:3001');
 });
